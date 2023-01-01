@@ -5,7 +5,6 @@ services:
     image: lscr.io/linuxserver/radarr:latest
     mem_limit: 512m
     cpus: 1
-    container_name: radarr
     environment:
       - PUID=1000
       - PGID=1000
