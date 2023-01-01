@@ -1,7 +1,8 @@
 services:
   jellyfin: 
     image: linuxserver/jellyfin:latest
-    # Pass in your config file below, by specifying the path on your host machine
+    mem_limit: 512m
+    cpus: 1
     volumes:
       - nfs_data_config:/config
       - nfs_data_shows:/data/shows
