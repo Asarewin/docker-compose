@@ -1,0 +1,40 @@
+services:
+  jellyfin: 
+    image: linuxserver/jellyfin:latest
+    # Pass in your config file below, by specifying the path on your host machine
+    volumes:
+      - nfs_data_config:/config
+      - nfs_data_shows:/data/shows
+      - nfs_data_movies:/data/movies
+    ports:
+      - 7359:7359
+      - 8096:8096
+      - 1900:1900
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
+    restart: unless-stopped
+  
+
+volumes:
+  nfs_data_movies:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Movies
+  nfs_data_shows:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Shows
+  nfs_data_config:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Portainer/jellyfinConfig
+  
