@@ -1,0 +1,37 @@
+---
+version: "2.1"
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    mem_limit: 512m
+    cpus: 1
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - nfs_data_config:/config
+      - nfs_data_shows:/tv #optional
+      - nfs_data_donwload:/downloads #a mettre en place quand transmission en place correctement
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+volumes:
+   nfs_data_config:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Portainer/sonarrConfig
+   nfs_data_shows:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Shows
+  nfs_data_donwload:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Transmission/Downloads
