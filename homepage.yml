@@ -2,17 +2,18 @@ version: "3.3"
 services:
   homepage:
     image: ghcr.io/benphelps/homepage:latest
-    container_name: homepage
+    mem_limit: 512m
+    cpus: 1
     ports:
       - 3000:3000
     volumes:
-      - nfs_data_config:/app/config # Make sure your local config directory exists
+      - /home/ubuntu/homepage/config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
     restart: unless-stopped
-  volumes:
+volumes:
   nfs_data_config:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /mnt/Data/Portainer/homepageConfig
+      device: /mnt/Data/Portainer/sonarrConfig
