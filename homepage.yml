@@ -7,7 +7,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - /home/ubuntu/homepage/config:/app/config # Make sure your local config directory exists
+      - nfs_data_config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
     restart: unless-stopped
 volumes:
@@ -16,4 +16,4 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /mnt/Data/Portainer/sonarrConfig
+      device: /mnt/Data/Portainer/homepageConfig
