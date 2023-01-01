@@ -17,13 +17,13 @@ services:
       - 8989:8989
     restart: unless-stopped
 volumes:
-   nfs_data_config:
+  nfs_data_config:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: /mnt/Data/Portainer/sonarrConfig
-   nfs_data_shows:
+  nfs_data_shows:
     driver: local
     driver_opts:
       type: none
