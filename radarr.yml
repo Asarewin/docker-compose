@@ -1,0 +1,38 @@
+---
+version: "2.1"
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    mem_limit: 512m
+    cpus: 1
+    container_name: radarr
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/London
+    volumes:
+      - nfs_data_config:/config
+      - nfs_data_movies:/movies #optional
+      - nfs_data_downloads:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+volumes:
+  nfs_data_movies:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Movies
+  nfs_data_downloads:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Transmission/Downloads
+  nfs_data_config:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Data/Portainer/radarrConfig
