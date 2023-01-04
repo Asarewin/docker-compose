@@ -7,8 +7,6 @@ services:
     restart: always
     ports:
       - "9091:9091"
-    env_file:
-      - /tmp/.env
     volumes:
       - nfs_data_config:/config # where transmission-home is stored
       - nfs_data_config:/data # where transmission will store the data
