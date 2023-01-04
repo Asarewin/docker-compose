@@ -21,8 +21,8 @@ services:
       - TRANSMISSION_WATCH_DIR_FORCE_GENERIC=true
       - TRANSMISSION_WATCH_DIR=/watch
       - OPENVPN_PROVIDER=PROTONVPN
-      - OPENVPN_USERNAME=${USERNAME}
-      - OPENVPN_PASSWORD=${PASSWORD}
+      - OPENVPN_USERNAME=$OPENVPN_USERNAME
+      - OPENVPN_PASSWORD=$OPENVPN_PASSWORD
       - OPENVPN_CONFIG=Netherlands 
       - OPENVPN_CONFIG=nl.protonvpn.net.udp # https://github.com/haugene/vpn-configs-contrib/tree/main/openvpn/protonvpn
       - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
