@@ -40,7 +40,7 @@ volumes:
       type: none
       o: bind
       device: /mnt/Data/Transmission/Downloads
-   nfs_data_watch:
+  nfs_data_watch:
     driver: local
     driver_opts:
       type: none
