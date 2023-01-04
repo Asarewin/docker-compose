@@ -34,7 +34,7 @@ volumes:
       type: none
       o: bind
       device: /mnt/Data/Portainer/transmissionConfig
-   nfs_data_download:
+  nfs_data_download:
     driver: local
     driver_opts:
       type: none
