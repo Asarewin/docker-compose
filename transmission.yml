@@ -8,7 +8,7 @@ services:
     ports:
       - "9091:9091"
     volumes:
-      - nfs_data_config:/config # where transmission-home is stored
+      - /home/ubuntu/transmissionconfig:/config # where transmission-home is stored
       - nfs_data_transmissiondata:/data # where transmission will store the data
       - nfs_data_download:/downloads
       - nfs_data_watch:/watch
