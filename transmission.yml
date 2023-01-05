@@ -13,8 +13,8 @@ services:
       - nfs_data_download:/downloads
       - nfs_data_watch:/watch
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=1000
       - TRANSMISSION_DOWNLOAD_DIR=/downloads/complete
       - TRANSMISSION_INCOMPLETE_DIR=/downloads/incomplete
       - WATCH_DIR_ENABLED=true
