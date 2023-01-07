@@ -2,6 +2,8 @@ version: '2'
 services:
   transmission:
     image: haugene/transmission-openvpn
+    mem_limit: 512m
+    memswap_limit: 512m
     cap_add:
       - NET_ADMIN
     restart: always
