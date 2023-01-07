@@ -2,6 +2,7 @@ services:
   jellyfin: 
     image: linuxserver/jellyfin:latest
     mem_limit: 512m
+    memswap_limit: 512m
     cpus: 1
     volumes:
       - nfs_data_config:/config
