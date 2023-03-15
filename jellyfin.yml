@@ -1,6 +1,6 @@
 services:
   jellyfin: 
-    mem_limit: 2G
+    mem_limit: 1G
     memswap_limit: 2G
     cpus: 8
     image: linuxserver/jellyfin:latest
