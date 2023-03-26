@@ -30,7 +30,7 @@ services:
       - OPENVPN_CONFIG=Netherlands 
       - OPENVPN_CONFIG=nl.protonvpn.net.udp # https://github.com/haugene/vpn-configs-contrib/tree/main/openvpn/protonvpn
       - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
-      - LOCAL_NETWORK=192.168.3.0/24
+      - LOCAL_NETWORK=192.168.0.0/24
       - PEERPORT=51413
 volumes:
   nfs_data_config:
